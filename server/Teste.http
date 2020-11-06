@@ -1,0 +1,26 @@
+###
+GET http://localhost:1234/
+
+### CADA INFORMAÇÃO QUE ESTIVER ENTRE "/" SERÁ UM PAREMETRO
+GET http://localhost:1234/5f5e71244c0e1f3c58ae4a83
+
+
+###
+POST http://localhost:1234/
+Content-Type: application/json
+
+{
+    //ANO-MES-DIA
+    "date": "2020-08-20",
+    
+    "credit": [{
+        "name": "Salário",
+        "value": 5000
+    }],
+
+    "debits" : [{
+        "name": "luz",
+        "value": 100,
+        "status": "PAGO"
+    }]
+}
