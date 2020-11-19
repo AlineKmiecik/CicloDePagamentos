@@ -24,8 +24,15 @@ router.get("/:cycleId", billingCycleController.getById);
 //SEM OS PARENTESES, APENAS SE A REQUISIÇÃO FOR FEITA NA RAIZ ELE CHAMARÁ O MÉTODO "STORE"
 router.post("/",billingCycleController.store);
 
+//delete, metodo/verbo http para deletar registros
+router.delete("/", billingCycleController.deleteAll);
 
+//pode ser utilizado o put (quando substitui todos os dados)
+//patch (quando substitui parcialmente os dados)
+router.put("/", billingCycleController.update);
 
+router.get("/:year/:month", billingCycleController.getByMonthYear);
+router.delete("/:cycleId", billingCycleController.delete); 
 
 //exportar o router pois ele será necessário em outros lugares como no servidor
 module.exports = router ;

@@ -24,3 +24,8 @@ Content-Type: application/json
         "status": "PAGO"
     }]
 }
+
+
+###
+DELETE http://localhost:1234/
+

@@ -27,6 +27,18 @@ class billingCycleController {
         }
     }
 
+    async getByMonthYear(req, res){
+        let year = Number(req.params.year);
+        let month = Number(req.params.month);
+        let cycles = await billingCycle.find({}).sort({ date: -1 });
+        for (let cycle of cycles) {
+          if (cycle.date.getFullYear() === year && cycle.date.getMonth() === month) {
+            return res.status(200).json( cycle);
+          }
+        }
+        return res.status(404);
+      }
+
     async get(req, res){
         var result = await billingCycle.find({});
         res.status(200).json(result);
@@ -41,7 +53,20 @@ class billingCycleController {
     }
 
     async delete(req, res){
-        
+        await billingCycle.deleteOne({_id: req.params.cycleId});
+        var result = await billingCycle.find({});
+        res.status(200).jason(result);
+    }
+
+    async deleteAll(req, res){
+        var result = await billingCycle.deleteAll();
+        res.status(200).json(result);
+    }
+
+    async update(req, res){
+        let cycle = req.body;
+        var result = await billingCycle.updateOne({_id: cycle._id}, cycle);
+        res.status(200).json(result);
     }
 
     

@@ -1,0 +1,43 @@
+.input-fied {
+  margin-right: 16px;
+}
+
+table{
+  width: 100%;
+}
+
+.conteudo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.esquerda{
+  margin-right: 8px;
+}
+.direita{
+  margin-left: 8px;
+}
+
+.celula{
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.campos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.campo{
+  flex: 5;
+  margin-right: 8px;
+}
+.botao{
+  flex: 1;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}

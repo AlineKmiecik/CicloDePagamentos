@@ -1,0 +1,18 @@
+.conteudo{
+    /*delimita que quem estiver dentro desse conteudo
+    ficará em duas direções
+    */
+    display: flex;
+    flex-direction: row;
+}
+.esquerda{
+    background-color: black;
+    height: 200px;
+    /* Define a largura */
+    flex: 1;
+}
+.direita{
+    background-color: brown;
+    height: 200px;
+    flex: 1;
+}
